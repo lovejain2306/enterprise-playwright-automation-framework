@@ -1,7 +1,15 @@
 import { defineConfig, devices } from '@playwright/test';
 
+
+if (!process.env.NODE_ENV) {
+  require("dotenv").config({ path: `${__dirname}//src//config//.env` });
+} else {
+  require("dotenv").config({
+    path: `${__dirname}//src//config//.env.${process.env.NODE_ENV}` });
+}
+
 export default defineConfig({
-  testDir: './src/tests',
+  testDir: './tests',
  retries: 1,
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */

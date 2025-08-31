@@ -1,7 +1,9 @@
 import { Page, expect } from "@playwright/test";
 import HomePage from "./HomePage";
+// Update the import path if LoggerUtil.ts is located elsewhere, for example:
 import logger from "../utils/LoggerUtil";
-import findValidElement from "../utils/SelfHealingUtill";
+// Or create src/utils/LoggerUtil.ts if it does not exist.
+//import findValidElement from "../utils/SelfHealingUtill";
 
 export default class LoginPage {
   private readonly usernameInputSelector = "#username";
